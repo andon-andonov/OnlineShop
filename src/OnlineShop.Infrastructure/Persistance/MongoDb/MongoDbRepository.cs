@@ -6,7 +6,7 @@ namespace OnlineShop.Infrastructure.Persistance.MongoDb;
 
 public class MongoDbRepository<TEntity> : MongoDbReadRepository<TEntity>, IRepository<TEntity> where TEntity : EntityBase
 {
-    public MongoDbRepository(MongoDbOptions options) : base(options)
+    public MongoDbRepository(MongoDbContext context) : base(context)
     {
     }
 

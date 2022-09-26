@@ -1,5 +1,6 @@
 ﻿using OnlineShop.Application;
 using OnlineShop.Infrastructure;
+using OnlineShop.Infrastructure.Persistance.MongoDb.Seed;
 using OnlineShop.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseMongoDbInitializer();
 }
 
 app.UseHttpsRedirection();

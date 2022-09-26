@@ -13,6 +13,7 @@ public static class ConfigureServices
         configuration.GetSection("MongoDb").Bind(mongoDbOptions);
         services.AddSingleton(mongoDbOptions);
 
+        services.AddSingleton<MongoDbContext>();
         services.AddScoped(typeof(IReadRepository<>), typeof(MongoDbReadRepository<>));
         services.AddScoped(typeof(IRepository<>), typeof(MongoDbRepository<>));
 

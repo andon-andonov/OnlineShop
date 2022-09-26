@@ -8,11 +8,9 @@ public class MongoDbReadRepository<TEntity> : IReadRepository<TEntity> where TEn
 {
     protected readonly IMongoCollection<TEntity> collection;
 
-    public MongoDbReadRepository(MongoDbOptions options)
+    public MongoDbReadRepository(MongoDbContext context)
     {
-        IMongoClient mongoClient = new MongoClient(options.ConnectionString);
-        IMongoDatabase database = mongoClient.GetDatabase(options.DatabaseName);
-        this.collection = database.GetCollection<TEntity>(typeof(TEntity).Name);
+        this.collection = context.Database.GetCollection<TEntity>(typeof(TEntity).Name);
     }
 
     public async Task<TEntity> Get(Guid id)
@@ -28,5 +26,10 @@ public class MongoDbReadRepository<TEntity> : IReadRepository<TEntity> where TEn
     public async Task<IEnumerable<TEntity>> Get(ISpecification<TEntity> specification)
     {
         return await this.collection.Find(specification.Filter).SortBy(specification.SortBy).ToListAsync();
+    }
+
+    public async Task<long> Count()
+    {
+        return await this.collection.CountDocumentsAsync(x => true);
     }
 }
