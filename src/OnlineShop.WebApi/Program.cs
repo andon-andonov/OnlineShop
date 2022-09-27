@@ -2,6 +2,7 @@
 using OnlineShop.Infrastructure;
 using OnlineShop.Infrastructure.Persistance.MongoDb.Seed;
 using OnlineShop.WebApi;
+using ConfigureWebApiServices = OnlineShop.WebApi.ConfigureServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(ConfigureWebApiServices.CorsPolicy);
 
 app.UseAuthorization();
 
