@@ -32,3 +32,15 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
     networks:
       - backend
+
+  onlineshopwebui:
+    container_name: onlineshop-webui
+    image: ${DOCKER_REGISTRY-}onlineshopwebui
+    ports:
+      - 5100:80
+    build:
+      context: .
+      dockerfile: src/OnlineShop.WebUI/Dockerfile
+    networks:
+      - backend
+

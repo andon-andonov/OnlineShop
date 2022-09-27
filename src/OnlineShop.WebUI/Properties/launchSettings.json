@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:14580",
+      "applicationUrl": "http://localhost:20016",
       "sslPort": 0
     }
   },
@@ -11,7 +11,7 @@
     "OnlineShop.WebUI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5026",
+      "applicationUrl": "http://localhost:5128",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
