@@ -16,6 +16,7 @@
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
     <None Remove="Common\Mappings\" />
     <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Products\Queries\GetSingleProduct\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Products\" />
@@ -23,6 +24,7 @@
     <Folder Include="Common\Interfaces\" />
     <Folder Include="Products\Queries\" />
     <Folder Include="Common\Mappings\" />
+    <Folder Include="Products\Queries\GetSingleProduct\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnlineShop.Domain\OnlineShop.Domain.csproj" />

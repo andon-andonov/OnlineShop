@@ -1,27 +1,30 @@
 import { useEffect, useState } from 'react';
 import ProductListItem from './ProductListItem';
-
-const GET_PRODUCTS_API_URL = 'http://localhost:5000/Products'; // TODO: move to env var
+import { getProducts } from './ProductsApi';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-
-  const getProducts = async () => {
-    const response = await fetch(GET_PRODUCTS_API_URL);
-    const data = await response.json();
-    return data;
-  };
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    getProducts().then((products) => setProducts(products));
+    getProducts().then((products) => {
+      setProducts(products);
+      setLoaded(true);
+    });
   }, []);
 
-  return products?.length > 0 ? (
-    products.map((product) => (
-      <ProductListItem key={product.id} product={product}></ProductListItem>
-    ))
+  const productList = products.map((product) => (
+    <ProductListItem key={product.id} product={product}></ProductListItem>
+  ));
+
+  return loaded ? (
+    products?.length > 0 ? (
+      productList
+    ) : (
+      <div>No products</div>
+    )
   ) : (
-    <div>empty</div>
+    <div>Loading</div>
   );
 };
 

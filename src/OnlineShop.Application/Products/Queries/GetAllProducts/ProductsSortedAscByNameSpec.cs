@@ -4,8 +4,8 @@ using OnlineShop.Domain.Entities;
 
 namespace OnlineShop.Application.Products.Queries.GetAllProducts;
 
-public class ProductsSortedAscByPriceSpec : ISpecification<Product>
+public class ProductsSortedAscByNameSpec : ISpecification<Product>
 {
     public Expression<Func<Product, bool>> Filter => x => true;
-    public Expression<Func<Product, object>> SortBy=> x => x.Price;
+    public Expression<Func<Product, object>> SortBy=> x => x.Name;
 }

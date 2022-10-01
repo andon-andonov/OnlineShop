@@ -13,6 +13,7 @@ public static class DbInitializerExtension
         IServiceScope scope = app.ApplicationServices.CreateScope();
 
         IRepository<Product> productRepository = scope.ServiceProvider.GetService<IRepository<Product>>();
+
         MongoDbInitializer.Initialize(productRepository).GetAwaiter().GetResult();
        
         return app;

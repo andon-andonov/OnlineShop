@@ -9,7 +9,13 @@ export class Layout extends Component {
     return (
       <div>
         <NavMenu />
-        <Container>
+        <Container
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+          }}
+        >
           {this.props.children}
         </Container>
       </div>

@@ -2,4 +2,4 @@
 
 namespace OnlineShop.Application.Products.Queries.GetAllProducts;
 
-public record GetAllProductsQuery : IRequest<IEnumerable<ProductModel>>;
+public class GetAllProductsQuery : IRequest<IEnumerable<ProductModel>> {}

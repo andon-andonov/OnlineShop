@@ -8,7 +8,10 @@ public static class ConfigureServices
     {
         services.AddControllers();
         services.AddEndpointsApiExplorer();
-        services.AddSwaggerGen();
+        services.AddSwaggerGen(options =>
+        {
+            options.CustomSchemaIds(x => x.FullName);
+        });
 
         services.AddCors(o => o.AddPolicy(CorsPolicy,
             builder =>

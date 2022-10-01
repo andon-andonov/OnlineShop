@@ -9,7 +9,7 @@ public partial class ProductsController
     public async Task<ActionResult<IEnumerable<ProductModel>>> GetAllProducts()
     {
         GetAllProductsQuery query = new();
-        IEnumerable<ProductModel> productModles = await this.mediator.Send(query);
-        return Ok(productModles);
+        IEnumerable<ProductModel> productModels = await this.mediator.Send(query);
+        return Ok(productModels);
     }
 }

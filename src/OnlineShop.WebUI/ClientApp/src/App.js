@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
 import { Layout } from './components/Layout';
 import './custom.css';
+import { Routes, Route } from 'react-router-dom';
+import AppRoutes from './AppRoutes';
+import { CartProvider } from './cart/CartContext';
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render() {
-    return (
+const App = () => {
+  return (
+    <CartProvider>
       <Layout>
         <Routes>
           {AppRoutes.map((route, index) => {
@@ -17,6 +15,8 @@ export default class App extends Component {
           })}
         </Routes>
       </Layout>
-    );
-  }
-}
+    </CartProvider>
+  );
+};
+
+export default App;

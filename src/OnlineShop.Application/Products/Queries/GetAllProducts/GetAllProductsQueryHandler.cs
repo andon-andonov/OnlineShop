@@ -18,7 +18,7 @@ public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, I
 
     public async Task<IEnumerable<ProductModel>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {
-        ISpecification<Product> specification = new ProductsSortedAscByPriceSpec();
+        ISpecification<Product> specification = new ProductsSortedAscByNameSpec();
         IEnumerable<Product> productEntities = await this.productRepository.Get(specification);
         return mapper.Map<IEnumerable<ProductModel>>(productEntities);
     }
