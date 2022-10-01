@@ -1,6 +1,5 @@
 ﻿using System;
 using OnlineShop.Domain.Entities;
-using OnlineShop.Domain.Interfaces;
 
 namespace OnlineShop.Application.Common.Interfaces;
 
