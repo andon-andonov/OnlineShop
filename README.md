@@ -10,8 +10,10 @@
 
 - The project is easy to setup. Just run:
 	- git clone https://github.com/andon-andonov/OnlineShop.git
-	- docker-compose build
-	- docker-compose up
+	- cd OnlineShop
+	- docker compose build
+	- docker compose up
+	- open http://localhost:5100
 
 - Use Clean Architecture to easily allow changing dependencies.
 
