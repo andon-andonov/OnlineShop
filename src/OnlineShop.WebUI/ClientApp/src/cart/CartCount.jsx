@@ -2,7 +2,7 @@ import { useCart } from './CartContext';
 
 const CartCount = () => {
   const cart = useCart();
-  return <div>{cart}</div>;
+  return <>{cart}</>;
 };
 
 export default CartCount;

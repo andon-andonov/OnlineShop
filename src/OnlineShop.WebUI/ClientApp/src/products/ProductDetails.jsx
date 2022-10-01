@@ -8,6 +8,7 @@ import {
   CardText,
   CardSubtitle,
   Button,
+  CardImg,
 } from 'reactstrap';
 import { useCartUpdate } from '../cart/CartContext';
 
@@ -25,10 +26,17 @@ const ProductDetails = () => {
   }, [id]);
 
   return loaded ? (
-    <Card>
-      <img alt="product" src={product.imageUrl} />
+    <Card style={{ width: '100%' }}>
       <CardBody>
-        <CardTitle tag="h5">{product.name}</CardTitle>
+        <CardTitle tag="h1">{product.name}</CardTitle>
+        <CardImg
+          alt="p"
+          src={product.imageUrl}
+          style={{
+            height: 180,
+          }}
+          width="100%"
+        />
         <CardSubtitle>Price: ${product.price}</CardSubtitle>
         <CardText>{product.description}</CardText>
         <Button color="primary" onClick={addProduct}>

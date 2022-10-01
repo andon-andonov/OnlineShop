@@ -6,6 +6,7 @@ import {
   NavbarToggler,
   NavItem,
   NavLink,
+  NavbarText,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
@@ -52,19 +53,9 @@ export class NavMenu extends Component {
                   Home
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/counter">
-                  Counter
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/fetch-data">
-                  Fetch data
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <CartCount></CartCount>
-              </NavItem>
+              <NavbarText>
+                Items in Cart: <CartCount></CartCount>
+              </NavbarText>
             </ul>
           </Collapse>
         </Navbar>

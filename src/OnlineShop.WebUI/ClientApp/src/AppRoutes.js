@@ -1,5 +1,3 @@
-import { Counter } from './components/Counter';
-import { FetchData } from './components/FetchData';
 import ProductDetails from './products/ProductDetails';
 import ProductList from './products/ProductList';
 
@@ -11,14 +9,6 @@ const AppRoutes = [
   {
     path: '/product/:id',
     element: <ProductDetails />,
-  },
-  {
-    path: '/counter',
-    element: <Counter />,
-  },
-  {
-    path: '/fetch-data',
-    element: <FetchData />,
   },
 ];
 
